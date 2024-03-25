@@ -1,8 +1,7 @@
 CREATE
 DATABASE cake_cms;
 
-USE
-cake_cms;
+USE cake_cms;
 
 CREATE TABLE users
 (
@@ -49,7 +48,7 @@ INSERT INTO users (email, password, created, modified)
 VALUES ('cakephp@example.com', 'secret', NOW(), NOW());
 
 INSERT INTO articles (user_id, title, slug, body, published, created, modified)
-VALUES (1, 'First Post', 'first-post', 'This is the first post.', 1, NOW(), NOW());
+VALUES (1, 'First Post', 'first-cpost', 'This is the first post.', 1, NOW(), NOW());
 
 
 

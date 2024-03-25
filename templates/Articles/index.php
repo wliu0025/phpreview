@@ -26,7 +26,7 @@
                 <tr>
                     <td><?= $this->Number->format($article->id) ?></td>
                     <td><?= $article->hasValue('user') ? $this->Html->link($article->user->email, ['controller' => 'Users', 'action' => 'view', $article->user->id]) : '' ?></td>
-                    <td><?= h($article->title) ?></td>
+                    <td><?= h($article->full_name) ?></td>
                     <td><?= h($article->slug) ?></td>
                     <td><?= h($article->published) ?></td>
                     <td><?= h($article->created) ?></td>

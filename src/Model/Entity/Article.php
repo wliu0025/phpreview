@@ -42,4 +42,8 @@ class Article extends Entity
         'user' => true,
         'tags' => true,
     ];
+
+    protected function _getFullName(){
+        return $this->title . ' - ' . $this->user->email;
+    }
 }

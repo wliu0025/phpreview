@@ -75,7 +75,7 @@ class ArticlesTable extends Table
             ->scalar('title')
             ->maxLength('title', 255)
             ->requirePresence('title', 'create')
-            ->notEmptyString('title');
+            ->notEmptyString('title','Please enter a value for the title field!');
 
         $validator
             ->scalar('slug')

@@ -3,7 +3,6 @@
 $this->disableAutoLayout();
 
 
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,6 +22,8 @@ $this->disableAutoLayout();
     <?= $this->fetch('script') ?>
 </head>
 <body>
+
+<?php echo $this->Html->image('/img/cake-logo.png') ?>
 
 </body>
 </html>

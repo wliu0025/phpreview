@@ -17,8 +17,7 @@ class ArticlesController extends AppController
      */
     public function index()
     {
-        $query = $this->Articles->find()
-            ->contain(['Users']);
+        $query = $this->Articles->find()->contain(['Users']);
         $articles = $this->paginate($query);
 
         $this->set(compact('articles'));

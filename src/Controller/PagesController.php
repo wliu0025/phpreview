@@ -34,7 +34,7 @@ class PagesController extends AppController
     /**
      * Displays a view
      *
-     * @param string ...$path Path segments.
+     * @param string ...$path Path segments.$path is an Array including all strings!
      * @return \Cake\Http\Response|null
      * @throws \Cake\Http\Exception\ForbiddenException When a directory traversal attempt.
      * @throws \Cake\View\Exception\MissingTemplateException When the view file could not
@@ -43,7 +43,7 @@ class PagesController extends AppController
      *   be found and not in debug mode.
      * @throws \Cake\View\Exception\MissingTemplateException In debug mode.
      */
-    public function display(string ...$path): ?Response
+    public function display(string ...$path): ?Response  //$path is an Array including all strings!
     {
         if (!$path) {
             return $this->redirect('/');
@@ -62,7 +62,7 @@ class PagesController extends AppController
         $this->set(compact('page', 'subpage'));
 
         try {
-            return $this->render(implode('/', $path));
+            return $this->render(implode('/', $path)); //join array into a string, home/
         } catch (MissingTemplateException $exception) {
             if (Configure::read('debug')) {
                 throw $exception;
