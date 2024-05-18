@@ -17,10 +17,14 @@ class ArticlesController extends AppController
      */
     public function index()
     {
-        $query = $this->Articles->find()->contain(['Users']);
-        $articles = $this->paginate($query);
+        $articles = $this->Articles->find()->contain(['Users'])->all();
+//        $articles = $this->paginate($query);
+
+        $session = $this->request->getSession();
+        $session->write('test_key', '888');
 
         $this->set(compact('articles'));
+
     }
 
     /**
@@ -55,7 +59,13 @@ class ArticlesController extends AppController
         }
         $users = $this->Articles->Users->find('list', limit: 200)->all();
         $tags = $this->Articles->Tags->find('list', limit: 200)->all();
-        $this->set(compact('article', 'users', 'tags'));
+
+//        $test_array = $this->Articles->Users->find('list', limit: 200)->toArray();
+        //$test_list = $this->Articles->Users->find('list', limit: 200)->all()->toList();
+
+
+
+        $this->set(compact('article', 'users','tags'));
     }
 
     /**

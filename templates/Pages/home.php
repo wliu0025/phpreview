@@ -2,6 +2,8 @@
 
 $this->disableAutoLayout();
 
+$session = $this->request->getSession();
+$avalue = $session->read('test_key');
 
 ?>
 <!DOCTYPE html>
@@ -24,6 +26,7 @@ $this->disableAutoLayout();
 <body>
 
 <?php echo $this->Html->image('/img/cake-logo.png') ?>
+Session value: <?=  $avalue ?>
 
 </body>
 </html>
